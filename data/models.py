@@ -14,12 +14,12 @@ class Data(models.Model):
     Description = models.CharField(max_length=500,blank=False)
     File = models.FileField(upload_to="file/",max_length=250,null=True,default=None)
     
-    def title(self, request, obj, *args, **kwargs):
-        # data = Data.objects.create(user=request.user, tries=10, successful_tries=5)
-        print("342545453666666666666666")
-        # print(data)
-        model_obj = SaveModel.title(self, request, obj)
-        super().title(request, model_obj, *args, **kwargs)
+    # def title(self, request, obj, *args, **kwargs):
+    #     # data = Data.objects.create(user=request.user, tries=10, successful_tries=5)
+    #     print("342545453666666666666666")
+    #     # print(data)
+    #     model_obj = SaveModel.title(self, request, obj)
+    #     super().title(request, model_obj, *args, **kwargs)
 
     def __str__(self):
         return str(self.id)
