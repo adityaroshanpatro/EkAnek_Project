@@ -15,14 +15,19 @@ from data.models import Data
 
 
 class DataAdmin(admin.ModelAdmin):
+    # readonly_fields = ['user']
     list_display = ['id', 'title', 'Description','File','user']
     list_display_links = ('id','title')
     search_fields = ('title','File')
     
-    @login_required
-    def todos_for_user(request):
+    def user(request):
+        print("lyykykyk")
+        return 
+    
+    def save(request):
         users = Data.objects.filter(user=request.user)
-        return render(request, 'templates/data/index.html', {'data' : users})
+        print("Llllllllllllllllllllllllllllllllllllllllllllllllll")
+        return render(request,  {'data' : users})
 
 
 
